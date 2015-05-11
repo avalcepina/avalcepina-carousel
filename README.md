@@ -79,6 +79,11 @@ This will download and install the latest version of the stand-alone WebDriver t
 Once you have ensured that the development web server hosting our application is up and running
 and WebDriver is updated, you can run the end-to-end tests using the supplied npm script:
 
+
+``` 
+npm start
+```
+
 ```
 npm run protractor
 ```
