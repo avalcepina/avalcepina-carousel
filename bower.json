@@ -1,0 +1,13 @@
+{
+	"name": "avalcepina-carousel",
+	"description": "A devcase carousel",
+	"version": "1.0.0",
+	"homepage": "",
+	"license": "MIT",
+	"private": false,
+	"dependencies": {
+		"angular": "1.2.x",
+		"angular-loader": "1.2.x",
+		"angular-mocks": "~1.2.x"
+	}
+}
