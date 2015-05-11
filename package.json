@@ -3,7 +3,7 @@
 	"description": "A devcase carousel",
 	"private": false,
 	"version": "1.0.0",
-	"repository": "https://github.com/angular/angular-seed",
+	"repository": "https://github.com/avalcepina/avalcepina-carousel",
 	"license": "MIT",
 	"devDependencies": {
 		"karma": "~0.10",
