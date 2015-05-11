@@ -1,4 +1,4 @@
-.avalcepina-carousel { 
+.avalcepina-carousel {
 	overflow: hidden;
 	position: relative;
 	line-height: 0;
@@ -10,29 +10,28 @@
 	-o-transition: all 700ms ease-in;
 	transition: all 700ms ease-in;
 }
+
 .avalcepina-carousel-items,
-.avalcepina-carousel-nav-items { 
+.avalcepina-carousel-nav-items {
 	padding: 0;
 	margin: 0;
 	list-style: none;
 }
+
 .avalcepina-carousel-items:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.avalcepina-carousel-item { 
+.avalcepina-carousel-item {
 	float: left;
 }
-
 
 /* image directive */
 .avalcepina-image {
 	width: 100%;
 }
-
-
 
 /* nav directive */
 .avalcepina-carousel-nav {
@@ -41,21 +40,25 @@
 	left: 0;
 	width: 100%;
 }
+
 .avalcepina-carousel-nav-wrapper {
     float:right;
     position:relative;
     left:-50%;
     text-align:left;
 }
+
 .avalcepina-carousel-nav-items {
     position:relative;
     left:50%;
 }
+
 .avalcepina-carousel-nav-item {
     position:relative;
     float: left;
     margin-right: 10px;
 }
+
 .avalcepina-carousel-nav-round {
 	background-color: #fff;
 	display: block;
@@ -64,26 +67,10 @@
 	border-radius: 20px;
 	cursor: pointer;
 }
+
 .avalcepina-carousel-nav-item-active .avalcepina-carousel-nav-round {
 	background-color: #00a1de;
 }
-
-
-/*
-.avalcepina-carousel-nav-prev,
-.avalcepina-carousel-nav-next {
-	display: block;
-	background: #fff; 
-	width: 40px;
-	height: 40px;
-	position: absolute;
-	top: 50%;
-	margin-top: -20px;
-	cursor: pointer;
-} 
-.avalcepina-carousel-nav-prev { left: 10px; }
-.avalcepina-carousel-nav-next { right: 10px; }
-*/
 
 .avalcepina-carousel-nav-prev,
 .avalcepina-carousel-nav-next {
@@ -96,16 +83,11 @@
 	overflow:hidden;
 	top: 50%;
 	margin-top: -20px;
-	}
+}
+
 .avalcepina-carousel-nav-prev { left: 10px; }
 .avalcepina-carousel-nav-next { right: 10px; }
 .avalcepina-carousel-nav-prev:hover{background-position:-123px -33px}
 .avalcepina-carousel-nav-next:hover{background-position:-183px -33px}
 .avalcepina-carousel-nav-prev{background-position:-243px -33px}
 .avalcepina-carousel-nav-next{background-position:-303px -33px}
-
-
-
-
-
-
