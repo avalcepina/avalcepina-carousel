@@ -54,13 +54,19 @@ Create an angular module which includes 'avalcepina-carousel' module, add a cont
 
 ```
 
+
 Then create some html which adds the controller.
 
-```
-<div avalcepina-carousel slides='slides'></div>
+
 ```
 
+<div avalcepina-carousel slides='slides'></div>
+
+```
+
+
 To make it work add some css as well.
+
 
 ```
 <link rel="stylesheet" href="css/avalcepina-style.css">
