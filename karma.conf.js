@@ -22,16 +22,28 @@ module.exports = function(config) {
 
 		browsers: ['PhantomJS'],
 
+		reporters: ['coverage', 'progress', 'html'],
+
+		preprocessors: {
+			// source files, that you wanna generate coverage for
+			// do not include tests or libraries
+			// (these files will be instrumented by Istanbul)
+			'app/*.js': ['coverage'],
+			'app/components/!(*_test).js': ['coverage']
+		},
+
+		// optionally, configure the reporter
+		coverageReporter: {
+			type: 'html',
+			dir: 'coverage/'
+		},
+
 		plugins: [
 			'karma-phantomjs-launcher',
 			'karma-jasmine',
-			'karma-junit-reporter'
-		],
-
-		junitReporter: {
-			outputFile: 'test_out/unit.xml',
-			suite: 'unit'
-		}
+			'karma-jasmine-html-reporter',
+			'karma-coverage'
+		]
 
 	});
 };

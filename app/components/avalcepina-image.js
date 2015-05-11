@@ -4,6 +4,8 @@
 	angular.module('avalcepina-carousel')
 		.directive('avalcepinaImage', function($window) {
 
+
+
 			return {
 				restrict: 'A',
 				template: '<img ng-if="slide.load" ng-src="{{src}}" class="avalcepina-image" />',
