@@ -1,68 +1,66 @@
 /* global document */
 (function() {
-	'use strict';
-	angular.module('avalcepina-carousel')
-		.directive('avalcepinaImage', function($window) {
+  'use strict';
+  angular.module('avalcepina-carousel')
+    .directive('avalcepinaImage', function($window) {
+
+      return {
+        restrict: 'A',
+        template: '<img ng-if="slide.load" ng-src="{{src}}" class="avalcepina-image" />',
+        controller: function($scope) {
+
+          // MODEL: urlLarge: "test1", urlSmall: "testMobile1"
+
+          // CONFIG
+          var width = $window.innerWidth || document.documentElement.clientWidth;
+
+          var $win = angular.element($window);
+          var BREAKPOINT = 480;
+          var mode = _device();
 
 
-
-			return {
-				restrict: 'A',
-				template: '<img ng-if="slide.load" ng-src="{{src}}" class="avalcepina-image" />',
-				controller: function($scope) {
-
-					// MODEL: urlLarge: "test1", urlSmall: "testMobile1"
-
-					// CONFIG
-					var width = $window.innerWidth || document.documentElement.clientWidth;
-
-					var $win = angular.element($window);
-					var BREAKPOINT = 480;
-					var mode = _device();
+          function _device() {
+            return width <= BREAKPOINT ? 'mobile' : 'desktop';
+          }
 
 
-					function _device() {
-						return width <= BREAKPOINT ? 'mobile' : 'desktop';
-					}
+          function _setImageUrl() {
+            if (mode === 'desktop') {
+              $scope.src = $scope.slide.urlLarge;
+            } else {
+              $scope.src = $scope.slide.urlSmall;
+            }
+          }
 
 
-					function _setImageUrl() {
-						if (mode === 'desktop') {
-							$scope.src = $scope.slide.urlLarge;
-						} else {
-							$scope.src = $scope.slide.urlSmall;
-						}
-					}
+          function _onResize() {
 
+            width = $window.innerWidth;
 
-					function _onResize() {
+            var newMode = _device();
 
-						width = $window.innerWidth;
+            if (mode !== newMode) {
+              mode = newMode;
 
-						var newMode = _device();
+              $scope.$apply(function() {
+                _setImageUrl();
+              });
+            }
+          }
 
-						if (mode !== newMode) {
-							mode = newMode;
+          $scope.src = '#';
 
-							$scope.$apply(function() {
-								_setImageUrl();
-							});
-						}
-					}
+          _setImageUrl();
 
-					$scope.src = '#';
+          $win.on('resize', _onResize);
 
-					_setImageUrl();
+          $scope.$on('$destroy', function() {
+            $win.off('resize', _onResize);
+            mode = width = $win = BREAKPOINT = null;
+          });
 
-					$win.on('resize', _onResize);
+        }
 
-					$scope.$on('$destroy', function() {
-						$win.off('resize', _onResize);
-						mode = width = $win = BREAKPOINT = null;
-					});
-
-				}
-
-			};
-		});
+      };
+    });
 }());
