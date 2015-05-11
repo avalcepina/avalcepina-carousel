@@ -1,11 +1,11 @@
 {
   "name": "avalcepina-carousel",
   "description": "A devcase carousel",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": [
     "app/components/avalcepina-module.js",
     "app/components/avalcepina-carousel.js",
-    "app/components/avalcepina-carousel-nav.js"
+    "app/components/avalcepina-carousel-nav.js",
     "app/components/avalcepina-image.js",
     "app/css/avalcepina-style.css"
   ],
